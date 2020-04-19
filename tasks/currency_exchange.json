@@ -1,0 +1,38 @@
+{
+  "actions": [
+    {
+      "collect": {
+        "name": "collect_currency_info",
+        "questions": [
+          {
+            "question": "What type of currency would you like to convert?",
+            "name": "currency_type",
+            "type": "GW2CURRENCY",
+            "validate": {
+              "on_failure": {
+                "messages": [
+                  {
+                    "say": "Sorry, that's not a currency type I know about. I can tell you how to convert gems and gold."
+                  }
+                ],
+                "repeat_question": true
+              },
+              "max_attempts": {
+                "redirect": "task://collect_fallback",
+                "num_attempts": 3
+              }
+            }
+          },
+          {
+            "question": "How much would you like to convert? For coins, use amounts in gold, please :)",
+            "name": "num_currency",
+            "type": "Twilio.NUMBER"
+          }
+        ],
+        "on_complete": {
+          "redirect": "https://gw2-sms-bot.herokuapp.com/currency"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "actions": [
+    {
+      "collect": {
+        "name": "collect_api_information",
+        "questions": [
+          {
+            "question": "What is your api key?%0aYou can generate one by going to your account here: https://account.arena.net/applications%0aThen copy and paste it to me!",
+            "name": "api_key",
+            "type": "Twilio.ALPHANUMERIC"
+          }
+        ],
+        "on_complete": {
+          "redirect": "https://gw2-sms-bot.herokuapp.com/savekey"
+        }
+      }
+    }
+  ]
+}
