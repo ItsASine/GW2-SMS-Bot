@@ -22,6 +22,12 @@ This chatbot uses Python and Flask to connect the Twilio API with the Guild Wars
 
 - Text (724) 257-4486 :smile:
 
+### Demo
+
+![Greeting](demo/Hello.gif) 
+
+![Converting gold](demo/Gold.png) ![Converting gems](demo/Gems.png)
+
 ## How To Make It
 
 ### Requirements
